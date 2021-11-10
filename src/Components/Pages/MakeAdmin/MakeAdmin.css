@@ -1,0 +1,21 @@
+.make-admin-form {
+  width: 90%;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+/* input field  */
+.make-admin-form input {
+  width: 100%;
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 1rem;
+  border: 1px solid rgb(141, 135, 135);
+}
+/* specefig input field  */
+.make-admin-form input:last-child {
+  padding: 5px 10px;
+  background-color: tomato;
+  color: white;
+  border: none;
+}

@@ -1,0 +1,24 @@
+/* add product container  */
+.add-product-container {
+  background-color: #ddd;
+  width: 90%;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+/* button and input  */
+.add-product-container input,
+button {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px 20px;
+  margin-top: 10px;
+}
+/* button design  */
+.add-product-container button {
+  background-color: tomato;
+  border: none;
+  color: white;
+  width: 90%;
+}

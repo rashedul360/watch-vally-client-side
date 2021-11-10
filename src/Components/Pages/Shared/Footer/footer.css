@@ -1,0 +1,8 @@
+/* list style  */
+.footer-list-item > li {
+  list-style-type: none;
+}
+.anchoreLInk {
+  color: white !important;
+  text-decoration: none;
+}

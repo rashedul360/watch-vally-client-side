@@ -1,0 +1,50 @@
+.login-container {
+  height: 100vh !important;
+  margin: 0 auto;
+}
+/* login containrt */
+.login-methods-container input,
+button {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+/* link  */
+a {
+  text-decoration: none;
+}
+/* login button  */
+.login-button {
+  padding: 5px;
+  background-color: tomato;
+  border: none;
+  color: white;
+  border-radius: 1rem;
+  border: 1px solid rgb(175, 172, 172);
+}
+/* imput field design  */
+.login-methods-container input {
+  padding: 10px 20px;
+  border-radius: 1rem;
+  border: 1px solid rgb(175, 172, 172);
+}
+/* button design  */
+.login-methods-container button {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 1rem;
+  border: 1px solid rgb(175, 172, 172);
+}
+/* specific field design  */
+.login-methods-container input:nth-child(3) {
+  padding: 5px;
+  background-color: tomato;
+  border: none;
+  color: white;
+}
+/* other login methods */
+.other-login-methods button {
+  border-radius: 1rem;
+  border: 1px solid rgb(175, 172, 172);
+}
