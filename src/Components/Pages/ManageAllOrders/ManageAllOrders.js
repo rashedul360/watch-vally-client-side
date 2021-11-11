@@ -74,14 +74,14 @@ const ManageAllOrders = () => {
                 <td>
                   <button
                     onClick={() => handleDelete(order._id)}
-                    className="btn btn-danger"
+                    className="btn btn-danger w-100"
                   >
                     Delete
                   </button>
                   {order.status === "pending" && (
                     <button
                       onClick={() => handleUpdate(order._id)}
-                      className="btn btn-success"
+                      className="btn btn-success w-100"
                     >
                       Approve
                     </button>

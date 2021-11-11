@@ -17,7 +17,10 @@ const AllProduct = ({ product }) => {
             <Card.Title>{ProductName.slice(0, 50)}</Card.Title>
             <Card.Text>{desc.slice(0, 200)}</Card.Text>
             <h4>Price: ${price}</h4>
-            <button onClick={handleBooking} className="w-50 btn btn-warning">
+            <button
+              onClick={handleBooking}
+              className="w-50 btn btn-warning w-100"
+            >
               <i className="fas fa-shopping-cart"></i> Buy now
             </button>
           </Card.Body>

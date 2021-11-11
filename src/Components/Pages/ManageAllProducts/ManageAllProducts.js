@@ -43,7 +43,7 @@ const ManageAllProducts = () => {
               <td>
                 <button
                   onClick={() => handleDelete(product._id)}
-                  className="btn btn-danger"
+                  className="btn btn-danger w-100"
                 >
                   Delete
                 </button>
