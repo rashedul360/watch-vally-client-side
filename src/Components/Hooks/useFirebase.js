@@ -25,10 +25,6 @@ const useFirebase = () => {
       .then((res) => res.json())
       .then((data) => {
         setAdminData(data[0]);
-        if (data[0]?.role === "admin") {
-          // setIsAdmin(true);
-          console.log(isAdmin);
-        }
       });
   }, [user.email]);
   // console.log((UserInfo.role = "nai"));
