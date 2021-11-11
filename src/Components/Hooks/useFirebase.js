@@ -15,6 +15,7 @@ const auth = getAuth();
 const googleProvider = new GoogleAuthProvider();
 const useFirebase = () => {
   const [user, setUser] = useState([]);
+  const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [adminData, setAdminData] = useState({});
   const [isAdmin, setIsAdmin] = useState(false);
@@ -39,13 +40,13 @@ const useFirebase = () => {
         updateProfile(auth.currentUser, {
           displayName: name,
         }).catch((error) => {});
-        // setError("");
-        // const locationUri = location?.state?.from || "/";
-        // history.replace(locationUri);
+        // set user
         setUser(newUser);
       })
       .catch((error) => {
+        // set error
         const errorMessage = error.message;
+        setError(errorMessage);
       })
       .finally(() => {
         setIsLoading(false);
@@ -59,9 +60,11 @@ const useFirebase = () => {
         const user = result.user;
         setUser(user);
         history.replace(locationUri);
+        setError("");
       })
       .catch((error) => {
         const errorMessage = error.message;
+        setError(errorMessage);
       })
       .finally(() => {
         setIsLoading(false);
@@ -73,9 +76,11 @@ const useFirebase = () => {
       .then((result) => {
         const user = result.user;
         setUser(user);
+        setError("");
       })
       .catch((error) => {
         const errorMessage = error.message;
+        setError(errorMessage);
       })
       .finally(() => {
         setIsLoading(false);
@@ -90,7 +95,7 @@ const useFirebase = () => {
       })
       .catch((error) => {
         // setError
-        // setError(error.message);
+        setError(error.message);
       })
       .finally(() => {
         setIsLoading(false);
@@ -128,6 +133,7 @@ const useFirebase = () => {
   }, []);
   return {
     user,
+    error,
     isLoading,
     isAdmin,
     adminData,

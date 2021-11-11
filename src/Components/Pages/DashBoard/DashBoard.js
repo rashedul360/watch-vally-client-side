@@ -1,12 +1,5 @@
-import React, { useEffect, useState } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams,
-  useRouteMatch,
-} from "react-router-dom";
+import React from "react";
+import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import AddAProduct from "../AddAProduct/AddAProduct";
 import MakeAdmin from "../MakeAdmin/MakeAdmin";
@@ -17,8 +10,7 @@ import PostAReview from "../PostAReview/PostAReview";
 import PrivetAdmin from "../PrivetAdmin/PrivetAdmin";
 
 const DashBoard = () => {
-  const { user, isAdmin, adminData, setIsAdmin, isLoading, UserInfo } =
-    useAuth();
+  const { isAdmin, setIsAdmin, UserInfo } = useAuth();
   let { path, url } = useRouteMatch();
 
   if (UserInfo?.role === "admin") {

@@ -10,7 +10,7 @@ const AboutShop = () => {
         <div className="col-md-6">
           <img
             src="https://i.ibb.co/5jyFMw2/pexels-thirdman-5061281-1.jpg"
-            className="img-fluid w-75 "
+            className="img-fluid w-75"
           />
         </div>
         <div className="col-md-6">

@@ -4,7 +4,7 @@ import registerImage from "../../../../images/login.svg";
 import useAuth from "../../../Hooks/useAuth";
 import "./Register.css";
 const Register = () => {
-  const { googleSignIn, saveUser, isLoading, newRegister, user } = useAuth();
+  const { googleSignIn, saveUser, newRegister, user } = useAuth();
   const [registerData, setRegisterData] = useState({});
   const history = useHistory();
   const location = useLocation();

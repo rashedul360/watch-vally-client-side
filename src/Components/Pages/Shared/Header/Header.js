@@ -1,13 +1,9 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 
 const Header = () => {
-  const history = useHistory();
-  const handleLoginRedirect = () => {
-    history.push("/login");
-  };
   const { logOut, user } = useAuth();
   return (
     <div>
@@ -36,7 +32,7 @@ const Header = () => {
                 </>
               ) : (
                 <Nav.Link as={Link} to="/login">
-                  Login
+                  <i className="fas fa-sign-in-alt"></i> Login
                 </Nav.Link>
               )}
             </Nav>

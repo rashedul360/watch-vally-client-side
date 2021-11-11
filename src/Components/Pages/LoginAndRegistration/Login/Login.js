@@ -4,7 +4,7 @@ import loginImage from "../../../../images/login.svg";
 import "./login.css";
 import { Link, useHistory, useLocation } from "react-router-dom";
 const Login = () => {
-  const { googleSignIn, user, loginUser, isLoading } = useAuth();
+  const { googleSignIn, user, loginUser, error, isLoading } = useAuth();
   const history = useHistory();
   const location = useLocation();
   const locationUri = location?.state?.from.pathname;
@@ -19,6 +19,7 @@ const Login = () => {
       </div>
     );
   }
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
     loginUser(loginData.email, loginData.password, history, locationUri);
@@ -30,6 +31,7 @@ const Login = () => {
     newLoginData[field] = value;
     setLoginData(newLoginData);
   };
+
   return (
     <div>
       <div className="container">
@@ -60,7 +62,9 @@ const Login = () => {
                 <button type="submit" value="login" className="login-button">
                   <i className="fas fa-sign-in-alt"></i> Login
                 </button>
+                <h6 className="text-center text-danger">{error}</h6>
               </form>
+
               <p className="text-center mt-3">Others sign in Method</p>
               <hr className="w-50 mx-auto" />
               <button onClick={googleSignIn}>

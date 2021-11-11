@@ -76,14 +76,14 @@ const ManageAllOrders = () => {
                     onClick={() => handleDelete(order._id)}
                     className="btn btn-danger w-100"
                   >
-                    Delete
+                    <i className="fas fa-trash"></i>
                   </button>
                   {order.status === "pending" && (
                     <button
                       onClick={() => handleUpdate(order._id)}
                       className="btn btn-success w-100"
                     >
-                      Approve
+                      <i className="fas fa-check-square"></i>
                     </button>
                   )}
                 </td>
