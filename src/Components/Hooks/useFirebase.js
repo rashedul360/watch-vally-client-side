@@ -18,20 +18,20 @@ const useFirebase = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [adminData, setAdminData] = useState({});
   const [isAdmin, setIsAdmin] = useState(false);
+  const UserInfo = { ...adminData };
+
   useEffect(() => {
     fetch(`https://polar-dawn-97020.herokuapp.com/register/${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setAdminData(data[0]);
-        if (userData?.role === "admin") {
-          setIsAdmin(true);
+        if (data[0]?.role === "admin") {
+          // setIsAdmin(true);
+          console.log(isAdmin);
         }
       });
-  }, [adminData]);
-
-  const UserInfo = adminData;
-  const userData = UserInfo;
-
+  }, [user.email]);
+  // console.log((UserInfo.role = "nai"));
   const newRegister = (email, password, name) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
@@ -135,6 +135,7 @@ const useFirebase = () => {
     isLoading,
     isAdmin,
     adminData,
+    UserInfo,
     googleSignIn,
     newRegister,
     loginUser,

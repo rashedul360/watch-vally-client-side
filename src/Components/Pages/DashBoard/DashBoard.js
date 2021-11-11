@@ -17,21 +17,25 @@ import PostAReview from "../PostAReview/PostAReview";
 import PrivetAdmin from "../PrivetAdmin/PrivetAdmin";
 
 const DashBoard = () => {
-  const { user, isAdmin, adminData, setIsAdmin, isLoading } = useAuth();
-
+  const { user, isAdmin, adminData, setIsAdmin, isLoading, UserInfo } =
+    useAuth();
+  console.log(isAdmin);
   let { path, url } = useRouteMatch();
   if (isLoading) {
     return "loading";
   }
-  // if (adminData?.role === "admin") {
-  //   setIsAdmin(true);
-  // }
+  if (UserInfo?.role === "admin") {
+    setIsAdmin(true);
+  } else {
+    setIsAdmin(false);
+  }
+
   return (
     <div>
       <div className="row container mx-auto w-100">
         <div className="col-md-3 col-sm-12">
           <div className="list-group">
-            {isAdmin && (
+            {isAdmin ? (
               <>
                 <Link
                   to={`${url}/addproduct`}
@@ -59,9 +63,7 @@ const DashBoard = () => {
                   Make Admin
                 </Link>
               </>
-            )}
-
-            {!isAdmin && (
+            ) : (
               <>
                 <Link
                   to={`${url}/myorders`}
