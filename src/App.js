@@ -10,6 +10,7 @@ import Login from "./Components/Pages/LoginAndRegistration/Login/Login";
 import Register from "./Components/Pages/LoginAndRegistration/Register/Register";
 import MakeAdmin from "./Components/Pages/MakeAdmin/MakeAdmin";
 import NotFound from "./Components/Pages/NotFound/NotFound";
+import Payment from "./Components/Pages/Payment/Payment";
 import PrivetRoute from "./Components/Pages/PrivetRoute/PrivetRoute";
 import ProductPurchase from "./Components/Pages/productPurchase/productPurchase";
 import Footer from "./Components/Pages/Shared/Footer/Footer";
@@ -39,6 +40,9 @@ function App() {
             </Route>
             <PrivetRoute path="/purchase/:id">
               <ProductPurchase></ProductPurchase>
+            </PrivetRoute>
+            <PrivetRoute path="/payment">
+              <Payment></Payment>
             </PrivetRoute>
             <Route exact path="*">
               <NotFound></NotFound>

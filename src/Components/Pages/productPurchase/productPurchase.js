@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Card, Col } from "react-bootstrap";
-import { useParams } from "react-router";
+import { useHistory, useParams } from "react-router";
 import useAuth from "../../Hooks/useAuth";
 import "./ProductPurchase.css";
 const ProductPurchase = () => {
   const [product, setProduct] = useState({});
   const id = useParams();
+  const history = useHistory();
   const { user } = useAuth();
   const { ProductName, desc, image, price } = product;
   const { displayName, email } = user;
@@ -43,6 +44,7 @@ const ProductPurchase = () => {
       .then((data) => {
         if (data.insertedId) {
           alert("Order placed successfully");
+          history.push("/payment");
         }
       });
   };
