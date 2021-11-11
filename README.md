@@ -18,7 +18,7 @@ watch vally [watch vally](https://github.com/facebook/create-react-app).
 
 ## if you are an admin you can make admin others with email
 
-## if new user registration successfully. the user created on firebase and also add others information on database (Signing up with Google will do the same thing)
+## if new user registration successfully. the user created on firebase and also add others information on database
 
 ## API is hosted via heroku
 

@@ -14,28 +14,24 @@ import ManageAllOrders from "../ManageAllOrders/ManageAllOrders";
 import ManageAllProducts from "../ManageAllProducts/ManageAllProducts";
 import MyOrders from "../MyOrders/MyOrders";
 import PostAReview from "../PostAReview/PostAReview";
+import PrivetAdmin from "../PrivetAdmin/PrivetAdmin";
 
 const DashBoard = () => {
-  const { user } = useAuth();
-  const [isAdmin, setIsAdmin] = useState(false);
-  useEffect(() => {
-    fetch(`https://polar-dawn-97020.herokuapp.com/register/${user.email}`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (data[0]?.role === "admin") {
-          setIsAdmin(true);
-        }
-      });
-  }, []);
+  const { user, isAdmin, adminData, setIsAdmin, isLoading } = useAuth();
 
   let { path, url } = useRouteMatch();
-
+  if (isLoading) {
+    return "loading";
+  }
+  // if (adminData?.role === "admin") {
+  //   setIsAdmin(true);
+  // }
   return (
     <div>
       <div className="row container mx-auto w-100">
         <div className="col-md-3 col-sm-12">
           <div className="list-group">
-            {isAdmin ? (
+            {isAdmin && (
               <>
                 <Link
                   to={`${url}/addproduct`}
@@ -63,7 +59,9 @@ const DashBoard = () => {
                   Make Admin
                 </Link>
               </>
-            ) : (
+            )}
+
+            {!isAdmin && (
               <>
                 <Link
                   to={`${url}/myorders`}
@@ -90,18 +88,18 @@ const DashBoard = () => {
             <Route path={`${path}/myorders`}>
               <MyOrders></MyOrders>
             </Route>
-            <Route path={`${path}/addproduct`}>
+            <PrivetAdmin path={`${path}/addproduct`}>
               <AddAProduct></AddAProduct>
-            </Route>
-            <Route path={`${path}/makeadmin`}>
+            </PrivetAdmin>
+            <PrivetAdmin path={`${path}/makeadmin`}>
               <MakeAdmin></MakeAdmin>
-            </Route>
-            <Route path={`${path}/manageproducts`}>
+            </PrivetAdmin>
+            <PrivetAdmin path={`${path}/manageproducts`}>
               <ManageAllProducts></ManageAllProducts>
-            </Route>
-            <Route path={`${path}/manageorders`}>
+            </PrivetAdmin>
+            <PrivetAdmin path={`${path}/manageorders`}>
               <ManageAllOrders></ManageAllOrders>
-            </Route>
+            </PrivetAdmin>
             <Route path={`${path}/review`}>
               <PostAReview></PostAReview>
             </Route>

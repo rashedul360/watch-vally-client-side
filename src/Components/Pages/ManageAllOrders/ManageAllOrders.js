@@ -58,7 +58,7 @@ const ManageAllOrders = () => {
             <th scope="col">Price</th>
             <th scope="col">Action</th>
             <th scope="col">Status</th>
-            <th scope="col">Phone</th>
+            <th scope="col">Phone Email</th>
             <th scope="col">Zip Code</th>
           </tr>
         </thead>
@@ -88,7 +88,11 @@ const ManageAllOrders = () => {
                   )}
                 </td>
                 <td>{order.status}</td>
-                <td>{order.phone}</td>
+                <td>
+                  {order.phone}
+                  <br />
+                  {order.email}
+                </td>
                 <td>{order.code}</td>
               </tr>
             </>

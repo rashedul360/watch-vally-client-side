@@ -16,6 +16,21 @@ const googleProvider = new GoogleAuthProvider();
 const useFirebase = () => {
   const [user, setUser] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [adminData, setAdminData] = useState({});
+  const [isAdmin, setIsAdmin] = useState(false);
+  useEffect(() => {
+    fetch(`https://polar-dawn-97020.herokuapp.com/register/${user.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setAdminData(data[0]);
+        if (userData?.role === "admin") {
+          setIsAdmin(true);
+        }
+      });
+  }, [adminData]);
+
+  const UserInfo = adminData;
+  const userData = UserInfo;
 
   const newRegister = (email, password, name) => {
     createUserWithEmailAndPassword(auth, email, password)
@@ -56,7 +71,7 @@ const useFirebase = () => {
         setIsLoading(false);
       });
   };
-  const googleSignIn = () => {
+  const googleSignIn = (name, email) => {
     setIsLoading(true);
     signInWithPopup(auth, googleProvider)
       .then((result) => {
@@ -86,6 +101,21 @@ const useFirebase = () => {
       });
   };
 
+  const saveUser = (newUser, method) => {
+    fetch("https://polar-dawn-97020.herokuapp.com/register", {
+      method: method,
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newUser),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          alert("user registered succcessfully");
+        }
+      });
+  };
   // for supply authentication  above place
   useEffect(() => {
     setIsLoading(true);
@@ -103,10 +133,14 @@ const useFirebase = () => {
   return {
     user,
     isLoading,
+    isAdmin,
+    adminData,
     googleSignIn,
     newRegister,
     loginUser,
     logOut,
+    saveUser,
+    setIsAdmin,
   };
 };
 export default useFirebase;

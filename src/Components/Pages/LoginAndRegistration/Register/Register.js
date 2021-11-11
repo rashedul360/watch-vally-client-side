@@ -4,7 +4,7 @@ import registerImage from "../../../../images/login.svg";
 import useAuth from "../../../Hooks/useAuth";
 import "./Register.css";
 const Register = () => {
-  const { googleSignIn, isLoading, newRegister, user } = useAuth();
+  const { googleSignIn, saveUser, isLoading, newRegister, user } = useAuth();
   const [registerData, setRegisterData] = useState({});
   const history = useHistory();
   const location = useLocation();
@@ -18,27 +18,19 @@ const Register = () => {
     );
   }
 
+  const newUser = {
+    email: registerData.email,
+    name: registerData.name,
+    role: "member",
+  };
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
     newRegister(registerData.email, registerData.password, registerData.name);
-    const newUser = {
-      email: registerData.email,
-      name: registerData.name,
-      role: "member",
-    };
-    fetch("https://polar-dawn-97020.herokuapp.com/register", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newUser),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.insertedId) {
-          alert("user registered succcessfully");
-        }
-      });
+    saveUser(newUser, "POST");
+  };
+  const withGoogleSignIn = () => {
+    googleSignIn();
   };
   const handleOnChange = (e) => {
     const field = e.target.name;
@@ -47,6 +39,7 @@ const Register = () => {
     newRegisterData[field] = value;
     setRegisterData(newRegisterData);
   };
+
   return (
     <div>
       <div>
@@ -93,7 +86,7 @@ const Register = () => {
                 </form>
                 <p className="text-center mt-3">Others sign in Method</p>
                 <hr className="w-50 mx-auto" />
-                <button onClick={googleSignIn}>
+                <button onClick={() => withGoogleSignIn()}>
                   <i className="fab fa-google"></i> google
                 </button>
                 <h6 className="text-center m-3">
