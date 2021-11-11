@@ -19,11 +19,8 @@ import PrivetAdmin from "../PrivetAdmin/PrivetAdmin";
 const DashBoard = () => {
   const { user, isAdmin, adminData, setIsAdmin, isLoading, UserInfo } =
     useAuth();
-  console.log(isAdmin);
   let { path, url } = useRouteMatch();
-  if (isLoading) {
-    return "loading";
-  }
+
   if (UserInfo?.role === "admin") {
     setIsAdmin(true);
   } else {

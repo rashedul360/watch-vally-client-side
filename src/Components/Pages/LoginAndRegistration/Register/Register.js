@@ -8,16 +8,6 @@ const Register = () => {
   const [registerData, setRegisterData] = useState({});
   const history = useHistory();
   const location = useLocation();
-  if (isLoading) {
-    return (
-      <div className="text-center mt-5">
-        <div className="spinner-border" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </div>
-      </div>
-    );
-  }
-
   const newUser = {
     email: registerData.email,
     name: registerData.name,

@@ -27,7 +27,7 @@ const useFirebase = () => {
         setAdminData(data[0]);
       });
   }, [user.email]);
-  // console.log((UserInfo.role = "nai"));
+
   const newRegister = (email, password, name) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {

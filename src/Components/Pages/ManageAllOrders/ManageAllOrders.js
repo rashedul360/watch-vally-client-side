@@ -10,7 +10,7 @@ const ManageAllOrders = () => {
       .then((data) => {
         setOrders(data);
       });
-  }, [order]);
+  }, [orders]);
   const handleDelete = (id) => {
     const warning = window.confirm("are you sure to delele this order?");
     if (warning) {
