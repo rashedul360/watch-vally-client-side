@@ -31,5 +31,3 @@ watch vally [watch vally](https://github.com/facebook/create-react-app).
 ## use can see his/her orders from dashboard. they can delete order (if needed)
 
 ## `noted` you can not delete your review. just you can post.
-
-### `yarn start`
