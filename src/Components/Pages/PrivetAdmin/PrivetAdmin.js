@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Redirect, Route } from "react-router";
 import useAuth from "../../Hooks/useAuth";
 
 const PrivetAdmin = ({ children, ...rest }) => {
-  const { user, isAdmin } = useAuth();
+  const { isAdmin } = useAuth();
 
   return (
     <div>
