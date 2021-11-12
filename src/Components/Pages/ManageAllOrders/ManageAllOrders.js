@@ -49,6 +49,8 @@ const ManageAllOrders = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
+          isLoading(true);
+
           // user interection
           alert("updated");
         }
