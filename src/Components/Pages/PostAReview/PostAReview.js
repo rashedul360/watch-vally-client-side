@@ -5,7 +5,7 @@ import "./PostAReview.css";
 const PostAReview = () => {
   const [reviewData, setReviewData] = useState();
   const { user } = useAuth();
-
+  //collect input field data
   const handleOnChange = (e) => {
     const field = e.target.name;
     const value = e.target.value;
@@ -13,6 +13,7 @@ const PostAReview = () => {
     newreviewData[field] = value;
     setReviewData(newreviewData);
   };
+  // form submit method
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const newReview = {
@@ -22,6 +23,7 @@ const PostAReview = () => {
       review: reviewData.review,
       img: user.photoURL,
     };
+    // fetching data from database
     fetch("https://polar-dawn-97020.herokuapp.com/review", {
       method: "POST",
       headers: {
@@ -31,6 +33,7 @@ const PostAReview = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        // user interection
         if (data.insertedId) {
           alert(
             `Dear ${user.displayName} we have recieved your review. thank you`
@@ -43,6 +46,7 @@ const PostAReview = () => {
       <div className="row register-container  dashboard-container align-items-center ">
         <div className="col-md-6 register-methods-container">
           <form onSubmit={handleFormSubmit}>
+            {/* review message  */}
             <textArea
               placeholder="write your overview or review. noted try to finish with 300 word"
               required
@@ -52,6 +56,7 @@ const PostAReview = () => {
               minLength="300"
               style={{ minHeight: "150px" }}
             ></textArea>
+            {/* review rating  */}
             <input
               type="text"
               placeholder="please provide rating poient (1 to 5)"
@@ -60,6 +65,7 @@ const PostAReview = () => {
               maxLength="1"
               onChange={handleOnChange}
             />
+            {/* submit  */}
             <button
               type="submit"
               className="register-button"
@@ -69,6 +75,7 @@ const PostAReview = () => {
             </button>
           </form>
         </div>
+        {/* post image  */}
         <div className="col other-register-methods">
           <img src={postImage} className="img-fluid" alt={postImage} />
         </div>

@@ -4,6 +4,7 @@ import Rating from "react-rating";
 
 const GetAllreviews = () => {
   const [reviews, setReviews] = useState([]);
+  // fetching data from database
   useEffect(() => {
     fetch("https://polar-dawn-97020.herokuapp.com/review")
       .then((res) => res.json())
@@ -11,11 +12,11 @@ const GetAllreviews = () => {
         setReviews(data);
       });
   }, []);
-
   return (
     <div className="mt-5 mb-5">
       <Row xs={1} md={3} className="g-4 container mx-auto">
         {reviews.map((review) => (
+          //mapping review  for show the single review
           <Col key={review._id}>
             <Card style={{ minHeight: "360px" }}>
               <div className="d-flex align-items-center m-2">
@@ -38,11 +39,7 @@ const GetAllreviews = () => {
               </div>
               <Card.Body>
                 <Card.Text>{review.review}</Card.Text>
-                {/* <Rating
-                  // className="far fa-star"
-                  initialRating={review.rating}
-                  readonly
-                /> */}
+                {/* review rating */}
                 <Rating
                   emptySymbol={<i className="far fa-star"></i>}
                   fullSymbol={

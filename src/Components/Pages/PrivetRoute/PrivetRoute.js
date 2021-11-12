@@ -7,6 +7,7 @@ const PrivetRoute = ({ children, ...rest }) => {
   if (isLoading) {
     return "loading";
   }
+  // privet route
   return (
     <div>
       <Route

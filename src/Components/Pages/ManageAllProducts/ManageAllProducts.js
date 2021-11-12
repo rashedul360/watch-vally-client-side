@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 const ManageAllProducts = () => {
   const [products, setProducts] = useState([]);
+  // fetching data from database
   useEffect(() => {
     fetch("https://polar-dawn-97020.herokuapp.com/allproduct")
       .then((res) => res.json())
@@ -9,6 +10,7 @@ const ManageAllProducts = () => {
         setProducts(data);
       });
   }, [products]);
+  // delete from database
   const handleDelete = (id) => {
     const warning = window.confirm("are you sure to delele this order?");
     if (warning) {
@@ -24,6 +26,7 @@ const ManageAllProducts = () => {
         });
     }
   };
+  // all product table
   return (
     <div style={{ minHeight: "100vh" }}>
       <table className="table">
@@ -41,6 +44,7 @@ const ManageAllProducts = () => {
               <td style={{ width: "40%" }}>{product.ProductName}</td>
               <td>${product.price}</td>
               <td>
+                {/* delete product  */}
                 <button
                   onClick={() => handleDelete(product._id)}
                   className="btn btn-danger w-100"

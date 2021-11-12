@@ -1,3 +1,4 @@
+// firebase configurations 
 const firebaseConfig = {
   apiKey: "AIzaSyAfz04a7xcOKXXEhfHN7eKYMuUbCR5YARY",
   authDomain: "watch-gallery-fbc87.firebaseapp.com",

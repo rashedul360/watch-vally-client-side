@@ -3,12 +3,15 @@ import { Card, Col } from "react-bootstrap";
 import { useHistory } from "react-router";
 
 const AllProduct = ({ product }) => {
+  // destructure some property feom product
   const { _id, ProductName, desc, image, price } = product;
   const history = useHistory();
+  // handle redirect
   const handleBooking = () => {
     history.push(`/purchase/${_id}`);
   };
   return (
+    // all product card
     <div style={{ minHeight: "100%" }}>
       <Col className="mt-5">
         <Card style={{ border: "none" }}>

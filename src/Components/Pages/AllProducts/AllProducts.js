@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Card, Col, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import AllProduct from "./AllProduct/AllProduct";
 
 const AllProducts = () => {
   const [products, setProducts] = useState([]);
+  // fetching data from database
   useEffect(() => {
     fetch("https://polar-dawn-97020.herokuapp.com/allproduct")
       .then((res) => res.json())
@@ -11,7 +12,7 @@ const AllProducts = () => {
         setProducts(data);
       });
   }, []);
-
+  // all products
   return (
     <div>
       <Row

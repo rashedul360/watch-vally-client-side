@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 const ManageAllOrders = () => {
   const [orders, setOrders] = useState([]);
   const [order, setOrder] = useState({});
+  // fetching data from database
   useEffect(() => {
     const url = `https://polar-dawn-97020.herokuapp.com/orders`;
     fetch(url)
@@ -11,6 +12,7 @@ const ManageAllOrders = () => {
         setOrders(data);
       });
   }, [orders]);
+  // delete method
   const handleDelete = (id) => {
     const warning = window.confirm("are you sure to delele this order?");
     if (warning) {
@@ -20,13 +22,14 @@ const ManageAllOrders = () => {
       })
         .then((res) => res.json())
         .then((data) => {
+          // user interection
           if (data.deletedCount) {
             alert("deleted");
           }
         });
     }
   };
-
+  // handle update
   const handleUpdate = (id) => {
     const updateOrder = orders[0];
     updateOrder.status = "shipped";
@@ -49,6 +52,7 @@ const ManageAllOrders = () => {
         }
       });
   };
+  // all orders table
   return (
     <div style={{ minHeight: "100vh" }}>
       <table className="table">
@@ -72,13 +76,16 @@ const ManageAllOrders = () => {
                 </td>
                 <td>${order.price}</td>
                 <td>
+                  {/* delete order  */}
                   <button
                     onClick={() => handleDelete(order._id)}
                     className="btn btn-danger w-100"
                   >
                     <i className="fas fa-trash"></i>
                   </button>
+
                   {order.status === "pending" && (
+                    // update order
                     <button
                       onClick={() => handleUpdate(order._id)}
                       className="btn btn-success w-100"

@@ -17,13 +17,14 @@ const ProductPurchase = () => {
   updateOrderData.ProductName = ProductName;
   updateOrderData.price = price;
   updateOrderData.status = "pending";
-
+  // fetching data from database
   useEffect(() => {
     const url = `https://polar-dawn-97020.herokuapp.com/allproduct/${id.id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, []);
+  // collect input data
   const handleOnChange = (e) => {
     const field = e.target.name;
     const value = e.target.value;
@@ -31,8 +32,10 @@ const ProductPurchase = () => {
     newOrderData[field] = value;
     setOrderData(newOrderData);
   };
+  // submit method
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    // posting on database
     fetch("https://polar-dawn-97020.herokuapp.com/orders", {
       method: "POST",
       headers: {
@@ -53,6 +56,7 @@ const ProductPurchase = () => {
       <div className="container">
         <div className="row align-items-center">
           <div className="col-md-6 col-sm-12">
+            {/* purchase product infromation  */}
             <div className="mt-5 mb-5">
               <Col>
                 <Card style={{ border: "none" }}>
@@ -67,6 +71,7 @@ const ProductPurchase = () => {
             </div>
           </div>
           <div className="col-md-6 col-sm-12 place-order-container">
+            {/* collect purchase information form user  */}
             <form onSubmit={handleFormSubmit}>
               <input
                 type="text"
@@ -107,6 +112,7 @@ const ProductPurchase = () => {
                 required
                 onChange={handleOnChange}
               />
+              {/* submit  */}
               <button type="submit" className="register-button">
                 <i className="fas fa-sign-in-alt"></i> Place Order
               </button>

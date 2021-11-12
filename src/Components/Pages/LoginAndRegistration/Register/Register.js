@@ -13,15 +13,17 @@ const Register = () => {
     name: registerData.name,
     role: "member",
   };
-
+  // form submit methoD
   const handleFormSubmit = (e) => {
     e.preventDefault();
     newRegister(registerData.email, registerData.password, registerData.name);
     saveUser(newUser, "POST");
   };
+  // google sign in method or function
   const withGoogleSignIn = () => {
     googleSignIn();
   };
+  // collect data from input field
   const handleOnChange = (e) => {
     const field = e.target.name;
     const value = e.target.value;
@@ -34,6 +36,7 @@ const Register = () => {
     <div>
       <div>
         <div className="container">
+          {/* redirection function  */}
           {user.email ? (
             location.state?.from == undefined ? (
               history.push("/")
@@ -43,6 +46,7 @@ const Register = () => {
           ) : (
             <div className="row register-container align-items-center">
               <div className="col-md-6 register-methods-container">
+                {/* registration input methods  */}
                 <form onSubmit={handleFormSubmit}>
                   <input
                     type="text"
@@ -76,9 +80,11 @@ const Register = () => {
                 </form>
                 <p className="text-center mt-3">Others sign in Method</p>
                 <hr className="w-50 mx-auto" />
+                {/* google login system  */}
                 <button onClick={() => withGoogleSignIn()}>
                   <i className="fab fa-google"></i> google
                 </button>
+                {/* email password redirect  */}
                 <h6 className="text-center m-3">
                   <Link className="text-center" to="/login">
                     Already user? please login
@@ -86,6 +92,7 @@ const Register = () => {
                 </h6>
               </div>
               <div className="col other-register-methods">
+                {/* registration image  */}
                 <img
                   src={registerImage}
                   className="img-fluid"

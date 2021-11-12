@@ -8,6 +8,7 @@ const ProductReview = () => {
         className="mx-auto"
         style={{ width: "10%", border: "2px solid tomato" }}
       />
+      {/* call component  */}
       <GetAllreviews></GetAllreviews>
     </div>
   );

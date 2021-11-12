@@ -1,6 +1,8 @@
+/* place order container  */
 .place-order-container {
   display: 100%;
 }
+/* input design  */
 .place-order-container input {
   display: block;
   width: 100%;

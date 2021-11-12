@@ -10,9 +10,10 @@ import PostAReview from "../PostAReview/PostAReview";
 import PrivetAdmin from "../PrivetAdmin/PrivetAdmin";
 
 const DashBoard = () => {
+  // collect methods and property form useAuth
   const { isAdmin, setIsAdmin, UserInfo } = useAuth();
   let { path, url } = useRouteMatch();
-
+  // role check
   if (UserInfo?.role === "admin") {
     setIsAdmin(true);
   } else {
@@ -24,6 +25,7 @@ const DashBoard = () => {
       <div className="row container mx-auto w-100">
         <div className="col-md-3 col-sm-12">
           <div className="list-group">
+            {/* admin rehaviour */}
             {isAdmin ? (
               <>
                 <Link
@@ -54,6 +56,7 @@ const DashBoard = () => {
               </>
             ) : (
               <>
+                {/* user behavour */}
                 <Link
                   to={`${url}/myorders`}
                   className="list-group-item list-group-item-action "
@@ -72,6 +75,7 @@ const DashBoard = () => {
           </div>
         </div>
         <div className="col-md-9 col-sm-12">
+          {/* newsted route  */}
           <Switch>
             <Route exact path={`${path}/`}>
               <MyOrders></MyOrders>

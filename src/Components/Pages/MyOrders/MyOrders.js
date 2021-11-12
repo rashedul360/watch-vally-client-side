@@ -4,6 +4,7 @@ import useAuth from "../../Hooks/useAuth";
 const MyOrders = () => {
   const [orders, setOrders] = useState([]);
   const { user } = useAuth();
+  // fetchind tada from database
   useEffect(() => {
     const url = `https://polar-dawn-97020.herokuapp.com/orders/${user.email}`;
     fetch(url)
@@ -12,6 +13,7 @@ const MyOrders = () => {
         setOrders(data);
       });
   }, [user.email]);
+  // delete my order
   const handleDelete = (id) => {
     const warning = window.confirm("are you sure to delele this order?");
     if (warning) {
@@ -21,6 +23,7 @@ const MyOrders = () => {
       })
         .then((res) => res.json())
         .then((data) => {
+          // user interection
           if (data.deletedCount) {
             alert("deleted");
           }
@@ -50,6 +53,7 @@ const MyOrders = () => {
                 </td>
                 <td>${order.price}</td>
                 <td>
+                  {/* delete button  */}
                   <button
                     onClick={() => handleDelete(order._id)}
                     className="btn btn-danger w-100"

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./AddAProduct.css";
 const AddAProduct = () => {
   const [productData, setProductData] = useState([]);
+  // form submit function
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const addNewPd = {
@@ -10,6 +11,7 @@ const AddAProduct = () => {
       image: productData.pdImg,
       price: productData.pdPrice,
     };
+    // posting data on database
     fetch("https://polar-dawn-97020.herokuapp.com/addproduct", {
       method: "POST",
       headers: {
@@ -19,11 +21,13 @@ const AddAProduct = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        // user interections
         if (data.insertedId) {
           alert("new product added succesfully");
         }
       });
   };
+  // const collect data from input field function
   const handleOnChange = (e) => {
     const field = e.target.name;
     const value = e.target.value;
@@ -34,6 +38,7 @@ const AddAProduct = () => {
   return (
     <div style={{ height: "100vh", display: "flex", alignItems: "center" }}>
       <div className="add-product-container">
+        {/* add product form  */}
         <form onSubmit={handleFormSubmit}>
           <input
             type="text"

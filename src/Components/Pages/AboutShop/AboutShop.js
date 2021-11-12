@@ -1,5 +1,5 @@
 import React from "react";
-
+// about shop conponent
 const AboutShop = () => {
   return (
     <div className="container">
@@ -8,6 +8,7 @@ const AboutShop = () => {
         align-items-center"
       >
         <div className="col-md-6">
+          {/* about shop message  */}
           <img
             src="https://i.ibb.co/5jyFMw2/pexels-thirdman-5061281-1.jpg"
             className="img-fluid w-75"
@@ -23,6 +24,7 @@ const AboutShop = () => {
               marginTop: "-10px",
             }}
           />
+          {/* about shop message  */}
           <p>
             At watch vally, you can guarantee you will find more watch brands
             than anywhere else. From the biggest designer brands, to the best of
@@ -37,6 +39,7 @@ const AboutShop = () => {
             gems, we are the ultimate destination when searching for a watch for
             yourself or a loved one.
           </p>
+          {/* read more button  */}
           <button className="btn btn-dark w-25">
             <i className="fab fa-readme"></i> Read more
           </button>
