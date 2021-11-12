@@ -12,6 +12,7 @@ import PrivetAdmin from "../PrivetAdmin/PrivetAdmin";
 const DashBoard = () => {
   // collect methods and property form useAuth
   const { isAdmin, setIsAdmin, UserInfo } = useAuth();
+
   let { path, url } = useRouteMatch();
   // role check
   if (UserInfo?.role === "admin") {
@@ -19,7 +20,6 @@ const DashBoard = () => {
   } else {
     setIsAdmin(false);
   }
-
   return (
     <div>
       <div className="row container mx-auto w-100">

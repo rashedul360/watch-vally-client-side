@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 const ManageAllOrders = () => {
   const [orders, setOrders] = useState([]);
   const [order, setOrder] = useState({});
+  const [loading, isLoading] = useState(false);
   // fetching data from database
   useEffect(() => {
     const url = `https://polar-dawn-97020.herokuapp.com/orders`;
@@ -11,7 +12,7 @@ const ManageAllOrders = () => {
       .then((data) => {
         setOrders(data);
       });
-  }, [orders]);
+  }, [loading]);
   // delete method
   const handleDelete = (id) => {
     const warning = window.confirm("are you sure to delele this order?");
@@ -22,6 +23,7 @@ const ManageAllOrders = () => {
       })
         .then((res) => res.json())
         .then((data) => {
+          isLoading(true);
           // user interection
           if (data.deletedCount) {
             alert("deleted");

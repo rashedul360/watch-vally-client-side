@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 const ManageAllProducts = () => {
   const [products, setProducts] = useState([]);
+  const [loading, isLoading] = useState(false);
   // fetching data from database
   useEffect(() => {
     fetch("https://polar-dawn-97020.herokuapp.com/allproduct")
@@ -9,7 +10,8 @@ const ManageAllProducts = () => {
       .then((data) => {
         setProducts(data);
       });
-  }, [products]);
+  }, [loading]);
+
   // delete from database
   const handleDelete = (id) => {
     const warning = window.confirm("are you sure to delele this order?");
@@ -20,6 +22,7 @@ const ManageAllProducts = () => {
       })
         .then((res) => res.json())
         .then((data) => {
+          isLoading(true);
           if (data.deletedCount) {
             alert("deleted");
           }
