@@ -20,6 +20,7 @@ const DashBoard = () => {
   } else {
     setIsAdmin(false);
   }
+
   return (
     <div>
       <div className="row container mx-auto w-100">

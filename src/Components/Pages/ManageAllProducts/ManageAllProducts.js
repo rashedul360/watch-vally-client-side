@@ -11,6 +11,10 @@ const ManageAllProducts = () => {
         setProducts(data);
       });
   }, [loading]);
+  // to convert false
+  setTimeout(() => {
+    isLoading(false);
+  }, 1000);
 
   // delete from database
   const handleDelete = (id) => {
