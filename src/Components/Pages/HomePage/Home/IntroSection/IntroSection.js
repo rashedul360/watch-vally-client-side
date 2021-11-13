@@ -11,7 +11,7 @@ const IntroSection = () => {
       <div className="intro-container text-white text-center d-flex align-items-center justify-content-center">
         <div className="w-50 mx-auto">
           <div>
-            <h1>welcome to our watch gallary</h1>
+            <h1>welcome to our watch vally</h1>
             <p>
               At watch vally, you can guarantee you will find more watch brands
               than anywhere else. From the biggest designer brands, to the best
