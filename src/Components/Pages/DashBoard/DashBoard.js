@@ -31,7 +31,7 @@ const DashBoard = () => {
         <h4 className="mx-5 text-white">Dashboard</h4>
       </div>
       <div className="row container mx-auto w-100">
-        <div className="col-md-3 col-sm-12">
+        <div className="col-md-3 col-sm-12 mt-3">
           <div className="list-group">
             <Link
               to="/"
@@ -75,11 +75,6 @@ const DashBoard = () => {
                 >
                   Make Admin
                 </Link>
-                <div className="border d-flex align-items-center ">
-                  <button onClick={logOut} className="btn btn-danger mb-2">
-                    Logout
-                  </button>
-                </div>
               </>
             ) : (
               <>
@@ -105,6 +100,11 @@ const DashBoard = () => {
                 </Link>
               </>
             )}
+            <div className="border d-flex align-items-center ">
+              <button onClick={logOut} className="btn btn-danger mb-2">
+                <i className="fas fa-sign-in-alt"></i> Logout
+              </button>
+            </div>
           </div>
         </div>
         <div className="col-md-9 col-sm-12">

@@ -65,7 +65,7 @@ const MyOrders = () => {
                     onClick={() => handleDelete(order._id)}
                     className="btn btn-danger w-100"
                   >
-                    Delete
+                    <i className="fas fa-trash"></i>
                   </button>
                 </td>
                 <td>{order.status}</td>
