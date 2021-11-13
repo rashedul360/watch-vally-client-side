@@ -18,7 +18,7 @@ const MyOrders = () => {
   setTimeout(() => {
     isLoading(false);
   }, 1000);
-  console.log(loading);
+
   // delete my order
   const handleDelete = (id) => {
     const warning = window.confirm("are you sure to delele this order?");
