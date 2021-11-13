@@ -24,9 +24,29 @@ const DashBoard = () => {
 
   return (
     <div>
+      <div
+        className="bg-danger w-100 d-flex align-items-center"
+        style={{ minHeight: "50px" }}
+      >
+        <h4 className="mx-5 text-white">Dashboard</h4>
+      </div>
       <div className="row container mx-auto w-100">
         <div className="col-md-3 col-sm-12">
           <div className="list-group">
+            <Link
+              to="/"
+              className="list-group-item list-group-item-action "
+              aria-current="true"
+            >
+              Home
+            </Link>
+            <Link
+              to="/exploremore"
+              className="list-group-item list-group-item-action "
+              aria-current="true"
+            >
+              All product
+            </Link>
             {/* admin rehaviour */}
             {isAdmin ? (
               <>

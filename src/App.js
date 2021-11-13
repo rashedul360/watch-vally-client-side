@@ -12,15 +12,12 @@ import NotFound from "./Components/Pages/NotFound/NotFound";
 import Payment from "./Components/Pages/Payment/Payment";
 import PrivetRoute from "./Components/Pages/PrivetRoute/PrivetRoute";
 import ProductPurchase from "./Components/Pages/productPurchase/productPurchase";
-import Footer from "./Components/Pages/Shared/Footer/Footer";
-import Header from "./Components/Pages/Shared/Header/Header";
 
 function App() {
   return (
     <div className="w-100 mx-auto">
       <AuthProvider>
         <BrowserRouter>
-          <Header></Header>
           <Switch>
             <Route exact path="/">
               <HomePage></HomePage>
@@ -47,7 +44,6 @@ function App() {
               <NotFound></NotFound>
             </Route>
           </Switch>
-          <Footer></Footer>
         </BrowserRouter>
       </AuthProvider>
     </div>

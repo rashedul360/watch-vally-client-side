@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Card, Col } from "react-bootstrap";
 import { useHistory, useParams } from "react-router";
 import useAuth from "../../Hooks/useAuth";
+import Header from "../Shared/Header/Header";
 import "./ProductPurchase.css";
 const ProductPurchase = () => {
   const [product, setProduct] = useState({});
@@ -53,6 +54,7 @@ const ProductPurchase = () => {
   };
   return (
     <div style={{ minHeight: "100vh" }}>
+      <Header></Header>
       <div className="container">
         <div className="row align-items-center">
           <div className="col-md-6 col-sm-12">

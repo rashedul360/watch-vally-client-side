@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Row } from "react-bootstrap";
+import Header from "../Shared/Header/Header";
 import AllProduct from "./AllProduct/AllProduct";
 
 const AllProducts = () => {
@@ -15,6 +16,7 @@ const AllProducts = () => {
   // all products
   return (
     <div>
+      <Header></Header>
       <Row
         xs={1}
         md={3}
