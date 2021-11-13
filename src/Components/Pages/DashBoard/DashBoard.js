@@ -33,20 +33,6 @@ const DashBoard = () => {
       <div className="row container mx-auto w-100">
         <div className="col-md-3 col-sm-12 mt-3">
           <div className="list-group">
-            <Link
-              to="/"
-              className="list-group-item list-group-item-action "
-              aria-current="true"
-            >
-              Home
-            </Link>
-            <Link
-              to="/exploremore"
-              className="list-group-item list-group-item-action "
-              aria-current="true"
-            >
-              All product
-            </Link>
             {/* admin rehaviour */}
             {isAdmin ? (
               <>
@@ -79,6 +65,20 @@ const DashBoard = () => {
             ) : (
               <>
                 {/* user behavour */}
+                <Link
+                  to="/"
+                  className="list-group-item list-group-item-action "
+                  aria-current="true"
+                >
+                  Home
+                </Link>
+                <Link
+                  to="/exploremore"
+                  className="list-group-item list-group-item-action "
+                  aria-current="true"
+                >
+                  All product
+                </Link>
                 <Link
                   to={`${url}/myorders`}
                   className="list-group-item list-group-item-action "
