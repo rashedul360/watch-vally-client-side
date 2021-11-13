@@ -11,7 +11,7 @@ import PrivetAdmin from "../PrivetAdmin/PrivetAdmin";
 
 const DashBoard = () => {
   // collect methods and property form useAuth
-  const { isAdmin, setIsAdmin, UserInfo } = useAuth();
+  const { isAdmin, setIsAdmin, UserInfo, logOut } = useAuth();
 
   let { path, url } = useRouteMatch();
   // role check
@@ -54,6 +54,11 @@ const DashBoard = () => {
                 >
                   Make Admin
                 </Link>
+                <div className="border d-flex align-items-center ">
+                  <button onClick={logOut} className="btn btn-danger mb-2">
+                    Logout
+                  </button>
+                </div>
               </>
             ) : (
               <>

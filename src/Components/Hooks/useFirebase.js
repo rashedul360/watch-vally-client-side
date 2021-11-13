@@ -94,6 +94,7 @@ const useFirebase = () => {
     setIsLoading(true);
     signOut(auth)
       .then(() => {
+        setError("");
         // empty user
         setUser({});
       })
