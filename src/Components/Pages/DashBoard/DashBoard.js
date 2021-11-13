@@ -6,10 +6,11 @@ import MakeAdmin from "../MakeAdmin/MakeAdmin";
 import ManageAllOrders from "../ManageAllOrders/ManageAllOrders";
 import ManageAllProducts from "../ManageAllProducts/ManageAllProducts";
 import MyOrders from "../MyOrders/MyOrders";
-import Payment from "../Payment/Payment";
 import PostAReview from "../PostAReview/PostAReview";
 import PrivetAdmin from "../PrivetAdmin/PrivetAdmin";
-
+const handleBack = () => {
+  window.history.back();
+};
 const DashBoard = () => {
   // collect methods and property form useAuth
   const { isAdmin, setIsAdmin, UserInfo, logOut } = useAuth();
@@ -25,7 +26,7 @@ const DashBoard = () => {
   return (
     <div>
       <div
-        className="bg-danger w-100 d-flex align-items-center"
+        className="bg-danger w-100 d-flex align-items-center d-flex justify-content-between"
         style={{ minHeight: "50px" }}
       >
         <h4 className="mx-5 text-white">Dashboard</h4>
@@ -65,12 +66,13 @@ const DashBoard = () => {
             ) : (
               <>
                 {/* user behavour */}
+
                 <Link
                   to="/"
                   className="list-group-item list-group-item-action "
                   aria-current="true"
                 >
-                  Home
+                  home
                 </Link>
                 <Link
                   to="/exploremore"
@@ -94,7 +96,13 @@ const DashBoard = () => {
                 </Link>
               </>
             )}
-            <div className="border d-flex align-items-center ">
+            <div
+              className="border d-flex align-items-center"
+              style={{ flexDirection: "column" }}
+            >
+              <button onClick={handleBack} className="btn btn-warning">
+                Back
+              </button>
               <button onClick={logOut} className="btn btn-danger mb-2">
                 <i className="fas fa-sign-in-alt"></i> Logout
               </button>
