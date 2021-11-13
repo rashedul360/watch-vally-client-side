@@ -92,12 +92,6 @@ const DashBoard = () => {
                 >
                   post review
                 </Link>
-                <Link
-                  to={`${url}/pay`}
-                  className="list-group-item list-group-item-action"
-                >
-                  Pay
-                </Link>
               </>
             )}
             <div className="border d-flex align-items-center ">
@@ -130,9 +124,6 @@ const DashBoard = () => {
             </PrivetAdmin>
             <Route path={`${path}/review`}>
               <PostAReview></PostAReview>
-            </Route>
-            <Route path={`${path}/pay`}>
-              <Payment></Payment>
             </Route>
           </Switch>
         </div>
