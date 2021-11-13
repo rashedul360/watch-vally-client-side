@@ -77,7 +77,12 @@ const PostAReview = () => {
         </div>
         {/* post image  */}
         <div className="col other-register-methods">
-          <img src={postImage} className="img-fluid" alt={postImage} />
+          <img
+            src={postImage}
+            className="img-fluid"
+            alt={postImage}
+            alt="image"
+          />
         </div>
       </div>
     </div>

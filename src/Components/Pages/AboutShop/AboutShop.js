@@ -12,6 +12,7 @@ const AboutShop = () => {
           <img
             src="https://i.ibb.co/5jyFMw2/pexels-thirdman-5061281-1.jpg"
             className="img-fluid w-75"
+            alt="image"
           />
         </div>
         <div className="col-md-6">

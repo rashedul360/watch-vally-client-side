@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./footer.css";
 
 const Footer = () => {
@@ -51,11 +52,11 @@ const Footer = () => {
                       <ul>
                         <li>
                           {" "}
-                          <a href="#"> Home</a>{" "}
+                          <Link to="/"> Home</Link>{" "}
                         </li>
                         <li>
                           {" "}
-                          <a href="#aboutShop"> About</a>{" "}
+                          <Link to="#aboutShop"> About</Link>{" "}
                         </li>
                         <li>
                           {" "}
@@ -105,7 +106,7 @@ const Footer = () => {
                   <h6> Payment methods</h6>
                   <img
                     src="https://i.ibb.co/3m0Pwfd/ssl-commerce-1d268dce.png"
-                    alt=""
+                    alt="image"
                     className="img-fluid"
                   />
                 </div>

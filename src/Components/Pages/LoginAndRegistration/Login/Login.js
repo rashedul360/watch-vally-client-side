@@ -82,7 +82,7 @@ const Login = () => {
             </div>
             {/* login image  */}
             <div className="col other-login-methods">
-              <img src={loginImage} className="img-fluid" alt="" />
+              <img src={loginImage} className="img-fluid" alt="image" />
             </div>
           </div>
         )}

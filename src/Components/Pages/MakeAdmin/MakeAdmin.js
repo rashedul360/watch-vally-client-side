@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+
 import "./MakeAdmin.css";
 const MakeAdmin = () => {
   const [email, setEmail] = useState("");
+
   const handleEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -25,6 +27,7 @@ const MakeAdmin = () => {
         }
       });
   };
+
   return (
     <div className="container">
       {/* make admin form  */}

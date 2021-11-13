@@ -20,7 +20,9 @@ const useFirebase = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [adminData, setAdminData] = useState({});
   const [isAdmin, setIsAdmin] = useState(false);
+
   const UserInfo = { ...adminData };
+
   // fetching data from database
   useEffect(() => {
     fetch(`https://polar-dawn-97020.herokuapp.com/register/${user.email}`)
@@ -144,6 +146,7 @@ const useFirebase = () => {
     isAdmin,
     adminData,
     UserInfo,
+
     googleSignIn,
     newRegister,
     loginUser,

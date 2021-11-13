@@ -3,10 +3,8 @@ import { Redirect, Route } from "react-router";
 import useAuth from "../../Hooks/useAuth";
 
 const PrivetAdmin = ({ children, ...rest }) => {
-  const { isAdmin, isLoading } = useAuth();
-  if (isLoading) {
-    return "loading";
-  }
+  const { isAdmin } = useAuth();
+
   // privet admin
   return (
     <div>

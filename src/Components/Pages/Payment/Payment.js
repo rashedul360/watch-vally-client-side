@@ -6,7 +6,7 @@ const Payment = () => {
       {/* payment message  */}
       <h1 className="text-center mt-5 mb-5">Payment Method comming soon</h1>
       {/* payment image  */}
-      <img src={payment} className="img-fluid mx-auto w-100" />
+      <img src={payment} className="img-fluid mx-auto w-100" alt="image" />
     </div>
   );
 };

@@ -93,11 +93,7 @@ const Register = () => {
               </div>
               <div className="col other-register-methods">
                 {/* registration image  */}
-                <img
-                  src={registerImage}
-                  className="img-fluid"
-                  alt={registerImage}
-                />
+                <img src={registerImage} className="img-fluid" alt="image" />
               </div>
             </div>
           )}

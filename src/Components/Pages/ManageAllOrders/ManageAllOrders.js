@@ -4,15 +4,18 @@ const ManageAllOrders = () => {
   const [orders, setOrders] = useState([]);
   const [order, setOrder] = useState({});
   const [loading, isLoading] = useState(false);
+
   // fetching data from database
   useEffect(() => {
     const url = `https://polar-dawn-97020.herokuapp.com/orders`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
+        // set data\
         setOrders(data);
       });
   }, [loading]);
+
   // to convert false
   setTimeout(() => {
     isLoading(false);

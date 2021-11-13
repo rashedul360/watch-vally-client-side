@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 const ManageAllProducts = () => {
   const [products, setProducts] = useState([]);
   const [loading, isLoading] = useState(false);
+
   // fetching data from database
   useEffect(() => {
     fetch("https://polar-dawn-97020.herokuapp.com/allproduct")
@@ -12,6 +13,7 @@ const ManageAllProducts = () => {
       });
   }, [loading]);
   // to convert false
+
   setTimeout(() => {
     isLoading(false);
   }, 1000);
