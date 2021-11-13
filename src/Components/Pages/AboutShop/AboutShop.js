@@ -15,7 +15,9 @@ const AboutShop = () => {
           />
         </div>
         <div className="col-md-6">
-          <h4 className="text-center p-3">About Shop</h4>
+          <h4 className="text-center p-3" id="aboutShop">
+            About Shop
+          </h4>
           <hr
             className="mx-auto"
             style={{

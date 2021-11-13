@@ -19,7 +19,9 @@ const HOmeProducts = () => {
   };
   return (
     <div className="mt-5 mb-5">
-      <h4 className="container p-5">most popular watch</h4>
+      <h4 className="container p-5" id="home_p">
+        most popular watch
+      </h4>
       {/* 6 item product on home page  */}
       <Row xs={1} md={3} className="g-4 container mx-auto">
         {products.slice(0, 6).map((product) => (

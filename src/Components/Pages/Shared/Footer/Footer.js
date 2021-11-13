@@ -10,63 +10,108 @@ const Footer = () => {
         className="mt-5 p-4 "
         style={{ background: "#212529", color: "white" }}
       >
-        {/* logo with some information part  */}
-        <div className="row align-items-center">
-          <div className="col-md-3">
-            <h1 as={Link} to="/">
-              Watch Vally
-            </h1>
-          </div>
-          {/* some importanr links part */}
-
-          <div className="col-md-3 text-start ">
-            <ul className="footer-list-item">
-              <li>
-                <Link className="anchoreLInk" to="/">
-                  home
-                </Link>
-              </li>
-              <li>
-                <Link className="anchoreLInk" to="">
-                  all name and link
-                </Link>
-              </li>
-              <li>
-                <Link className="anchoreLInk" to="">
-                  all name and link
-                </Link>
-              </li>
-              <li>
-                <Link className="anchoreLInk" to="">
-                  all name and link
-                </Link>
-              </li>
-            </ul>
-          </div>
-          {/* about this website part  */}
-          <div className="col-md-3">
-            <h4>About</h4>
-            <p className="text-start">
-              At watch vally, you can guarantee you will find more watch brands
-              than anywhere else. From the biggest designer brands, to the best
-              of luxury and some hidden gems, we are the ultimate destination
-              when searching for a watch for yourself or a loved one
-            </p>
-          </div>
-          {/* some social icons  */}
-          <div className="col-md-3 social-links">
-            {/* <i className="fab fa-facebook"></i>
-
-            <i className="fab fa-google"></i>
-            <i className="fab fa-google-play"></i>
-            <br />
-            <i className="fab fa-youtube"></i>
-            <i className="fab fa-instagram-square"></i> */}
-            <img
-              src="https://i.ibb.co/3m0Pwfd/ssl-commerce-1d268dce.png"
-              alt=""
-              className="img-fluid"
-            />
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6">
+              <div className="row">
+                <div className="col-md-6 ">
+                  <div className="logo-part">
+                    <h4 className="mb-3">Watch vally</h4>
+                    <p>mirpur 452 dhaka,bangladesh</p>
+                    <p>01312416730</p>
+                    <p>
+                      At watch vally, you can guarantee you will find more watch
+                      brands than anywhere else.
+                    </p>
+                  </div>
+                </div>
+                <div className="col-md-6 px-4">
+                  <h6> About Company</h6>
+                  <p>
+                    We provide the best service in bangladesh, and also warentty
+                    service
+                  </p>
+                  <a href="#aboutShop" className="btn-footer">
+                    {" "}
+                    About US{" "}
+                  </a>
+                  <br />
+                  <a href="#aboutShop" className="btn-footer">
+                    {" "}
+                    Contact Us
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-6">
+              <div className="row">
+                <div className="col-md-6 px-4">
+                  <h6>Quick Access</h6>
+                  <div className="row ">
+                    <div className="col-md-6">
+                      <ul>
+                        <li>
+                          {" "}
+                          <a href="#"> Home</a>{" "}
+                        </li>
+                        <li>
+                          {" "}
+                          <a href="#aboutShop"> About</a>{" "}
+                        </li>
+                        <li>
+                          {" "}
+                          <a href="#home_p"> Service</a>{" "}
+                        </li>
+                        <li>
+                          {" "}
+                          <a href="#p_review"> Reviews</a>{" "}
+                        </li>
+                        <li>
+                          {" "}
+                          <a href="#"> support</a>{" "}
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="col-md-6 px-4">
+                      <ul>
+                        <li>
+                          {" "}
+                          <a href="#"> Nagad</a>{" "}
+                        </li>
+                        <li>
+                          {" "}
+                          <a href="#"> Visa</a>{" "}
+                        </li>
+                        <li>
+                          {" "}
+                          <a href="#"> Islami Bank</a>{" "}
+                        </li>
+                        <li>
+                          {" "}
+                          <a href="#"> Bkash</a>{" "}
+                        </li>
+                        <li>
+                          {" "}
+                          <a href="#"> Refunds</a>{" "}
+                        </li>
+                        <li>
+                          {" "}
+                          <a href="#"> Others --></a>{" "}
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-6 ">
+                  <h6> Payment methods</h6>
+                  <img
+                    src="https://i.ibb.co/3m0Pwfd/ssl-commerce-1d268dce.png"
+                    alt=""
+                    className="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
