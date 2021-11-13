@@ -6,6 +6,7 @@ import MakeAdmin from "../MakeAdmin/MakeAdmin";
 import ManageAllOrders from "../ManageAllOrders/ManageAllOrders";
 import ManageAllProducts from "../ManageAllProducts/ManageAllProducts";
 import MyOrders from "../MyOrders/MyOrders";
+import Payment from "../Payment/Payment";
 import PostAReview from "../PostAReview/PostAReview";
 import PrivetAdmin from "../PrivetAdmin/PrivetAdmin";
 
@@ -76,6 +77,12 @@ const DashBoard = () => {
                 >
                   post review
                 </Link>
+                <Link
+                  to={`${url}/pay`}
+                  className="list-group-item list-group-item-action"
+                >
+                  Pay
+                </Link>
               </>
             )}
           </div>
@@ -103,6 +110,9 @@ const DashBoard = () => {
             </PrivetAdmin>
             <Route path={`${path}/review`}>
               <PostAReview></PostAReview>
+            </Route>
+            <Route path={`${path}/pay`}>
+              <Payment></Payment>
             </Route>
           </Switch>
         </div>

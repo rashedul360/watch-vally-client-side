@@ -5,7 +5,7 @@ const AboutShop = () => {
     <div className="container">
       <div
         className="row justify-content-evenly
-        align-items-center"
+        align-items-center container"
       >
         <div className="col-md-6">
           {/* about shop message  */}

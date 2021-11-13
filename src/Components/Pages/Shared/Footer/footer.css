@@ -28,19 +28,13 @@ footer h6:after {
 .btn-footer:hover {
   text-decoration: none;
 }
-/* text field design  */
-.form-footer input[type="text"] {
+text field design .form-footer input[type="text"] {
   border: none;
   border-radius: 16px 0 0 16px;
   outline: none;
   padding-left: 10px;
 }
-/* place holder design  */
-::placeholder {
-  font-size: 10px;
-  padding-left: 10px;
-  font-style: italic;
-}
+
 /* text input design  */
 .form-footer input[type="button"] {
   border: none;
